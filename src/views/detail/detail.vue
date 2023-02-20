@@ -7,13 +7,15 @@
       @click-left="onClickLeft"
     />
     <DetailSwipe v-if="mainPart" :swipeData="mainPart?.topModule.housePicture.housePics"/>
+    <DetailInfo v-if="mainPart" :topInfos="mainPart?.topModule" />
   </div>
 </template>
 
 <script setup>
 import { ref, computed } from 'vue'
 import { useRoute, useRouter} from 'vue-router'
-import DetailSwipe from './cpns/detail-swipe.vue'
+import DetailSwipe from './cpns/detail_01-swipe.vue'
+import DetailInfo from './cpns/detail_02-infos.vue'
 import { getDetailInfos } from '@/service'
 
 // 路由
