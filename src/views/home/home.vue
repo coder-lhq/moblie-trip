@@ -2,7 +2,7 @@
   <div class="home">
     <HomeNavBar />
     <div class="banner">
-      <img src="@/assets/img/home/banner.webp" alt="">
+      <img src="@/assets/img/home/banner.webp" alt="" />
     </div>
     <HomeSearchBox />
     <HomeCategories />
@@ -17,8 +17,8 @@
 import { watch, ref, computed } from 'vue'
 import useHomeStore from '@/stores/modules/home'
 import useScroll from '@/hooks/useScroll'
-import HomeNavBar from './cpns/home-nav-bar.vue';
-import HomeSearchBox from './cpns/home-search-box.vue';
+import HomeNavBar from './cpns/home-nav-bar.vue'
+import HomeSearchBox from './cpns/home-search-box.vue'
 import HomeCategories from './cpns/home-categories.vue'
 import HomeCntent from './cpns/home-content.vue'
 import SearchBar from '@/components/search-bar/search-bar.vue'
@@ -51,13 +51,12 @@ watch(isReachBottom, () => {
 const isShowSearchBar = computed(() => {
   return scrollTop.value > 360
 })
-
 </script>
 
 <style lang="less" scoped>
 .home {
   padding-bottom: 100px;
-    .banner {
+  .banner {
     img {
       width: 100%;
     }
@@ -73,7 +72,4 @@ const isShowSearchBar = computed(() => {
     background-color: #fff;
   }
 }
-
-
-
 </style>

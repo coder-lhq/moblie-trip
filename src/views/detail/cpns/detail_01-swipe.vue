@@ -3,13 +3,13 @@
     <van-swipe class="swipe-list" :autoplay="3000" indicator-color="white">
       <template v-for="(item, index) in swipeData" :key="index">
         <van-swipe-item class="item">
-          <img :src="item.url" alt="">
+          <img :src="item.url" alt="" />
         </van-swipe-item>
       </template>
-      <template #indicator="{active, total }">
+      <template #indicator="{ active, total }">
         <div class="custom-indicator">
           <template v-for="(value, key, index) in swipeGroup">
-            <span class="item" :class="{active: swipeData[active]?.enumPictureCategory == key}">
+            <span class="item" :class="{ active: swipeData[active]?.enumPictureCategory == key }">
               <span>{{ getName(value[0].title) }}</span>
               <span v-if="swipeData[active]?.enumPictureCategory == key">
                 {{ getCategoryIndex(swipeData[active]) }} / {{ value.length }}
@@ -23,7 +23,6 @@
 </template>
 
 <script setup>
-
 const props = defineProps({
   swipeData: {
     type: Array,
@@ -34,7 +33,7 @@ const props = defineProps({
 // 对轮播图数据进行分类
 const swipeGroup = {}
 
-for(const item of props.swipeData) {
+for (const item of props.swipeData) {
   let valueArray = swipeGroup[item.enumPictureCategory]
   if (!valueArray) {
     valueArray = []
@@ -42,7 +41,7 @@ for(const item of props.swipeData) {
   }
   valueArray.push(item)
 }
-console.log(swipeGroup);
+console.log(swipeGroup)
 
 const nameReg = /【(.*?)】/i
 const getName = (name) => {
@@ -53,10 +52,8 @@ const getName = (name) => {
 
 const getCategoryIndex = (data) => {
   const valueArray = swipeGroup[data.enumPictureCategory]
-  return valueArray.findIndex(item => item === data) + 1
+  return valueArray.findIndex((item) => item === data) + 1
 }
-
-
 </script>
 
 <style lang="less" scoped>

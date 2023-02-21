@@ -2,14 +2,14 @@
   <div class="house-item">
     <div class="item-inner">
       <div class="cover">
-        <img :src="itemData.image.url" alt="">
+        <img :src="itemData.image.url" alt="" />
         <div class="info">
           <div class="location">
-            <img src="@/assets/img/home/location.png" alt="">
+            <img src="@/assets/img/home/location.png" alt="" />
             <span class="text">{{ itemData.location }}</span>
           </div>
           <div class="name">{{ itemData.houseName }}</div>
-          <div class="summary">{{ itemData.summaryText}}</div>
+          <div class="summary">{{ itemData.summaryText }}</div>
           <div class="price">
             <div class="new">¥{{ itemData.finalPrice }}</div>
             <div class="old">¥{{ itemData.productPrice }}</div>
@@ -22,7 +22,6 @@
 </template>
 
 <script setup>
-
 defineProps({
   itemData: {
     type: Object,
@@ -98,7 +97,7 @@ defineProps({
       }
 
       .tip {
-        background-image: linear-gradient(270deg,#f66,#ff9f9f);
+        background-image: linear-gradient(270deg, #f66, #ff9f9f);
         color: #fff;
         padding: 0 6px;
         border-radius: 8px;

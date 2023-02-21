@@ -1,6 +1,6 @@
 <template>
   <div class="city-group">
-    <van-index-bar @select="clickSelect" :index-list="indexList"        highlight-color="#ff9854">
+    <van-index-bar @select="clickSelect" :index-list="indexList" highlight-color="#ff9854">
       <van-index-anchor index="热门推荐" />
       <div class="list">
         <template v-for="(item, index) in groupData.hotCities" :key="index">

@@ -1,6 +1,6 @@
-import { defineStore } from "pinia"
+import { defineStore } from 'pinia'
 import { getHotSuggests, getCategories, getHomeHouseList } from '@/service/index'
-const useHomeStore = defineStore('home',{
+const useHomeStore = defineStore('home', {
   state: () => ({
     hotSuggests: [],
     categories: [],

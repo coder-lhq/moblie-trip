@@ -1,11 +1,11 @@
 <template>
   <div class="search-box">
     <!-- 位置信息 -->
-    <div class="location bottom-gray-line ">
+    <div class="location bottom-gray-line">
       <div class="city" @click="cityClick">{{ currentCity.cityName }}</div>
       <div class="position" @click="positionClick">
         <span class="text">我的位置</span>
-        <img src="@/assets/img/home/icon_location.png" alt="">
+        <img src="@/assets/img/home/icon_location.png" alt="" />
       </div>
     </div>
 
@@ -40,7 +40,15 @@
     <!-- 热门推荐 -->
     <div class="hot-suggests">
       <template v-for="(item, index) in hotSuggests" :key="index">
-        <div class="item" :style="{color: item.tagText.color, background: item.tagText.background.color}">{{ item.tagText.text }}</div>
+        <div
+          class="item"
+          :style="{
+            color: item.tagText.color,
+            background: item.tagText.background.color
+          }"
+        >
+          {{ item.tagText.text }}
+        </div>
       </template>
     </div>
     <!-- 搜索 -->
@@ -65,22 +73,22 @@ const cityClick = () => {
   router.push('/city')
 }
 
-
 const positionClick = () => {
-  navigator.geolocation.getCurrentPosition(res => {
+  navigator.geolocation.getCurrentPosition((res) => {
     console.log(res)
-  }), err => {
-    console.log(err)
-  },{
-    enableHighAccuracy: true,
-    timeout: 5000,
-    maximumAge: 0
-  }
+  }),
+    (err) => {
+      console.log(err)
+    },
+    {
+      enableHighAccuracy: true,
+      timeout: 5000,
+      maximumAge: 0
+    }
 }
 
 const cityStore = useCityStore()
 const { currentCity } = storeToRefs(cityStore)
-
 
 // 日期数据
 const mainStore = useMainStore()
@@ -127,7 +135,6 @@ const clickSearch = () => {
     }
   })
 }
-
 </script>
 
 <style lang="less" scoped>
@@ -176,7 +183,8 @@ const clickSearch = () => {
       font-size: 12px;
       color: #666;
     }
-    .start, .end {
+    .start,
+    .end {
       display: flex;
       flex-direction: column;
       span:first-of-type {
@@ -227,5 +235,4 @@ const clickSearch = () => {
     }
   }
 }
-
 </style>

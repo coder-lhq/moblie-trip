@@ -1,8 +1,8 @@
 <template>
   <div class="categories">
-    <template v-for="(item) in categories" :key="item.id">
+    <template v-for="item in categories" :key="item.id">
       <div class="item">
-        <img :src="item.pictureUrl" alt="">
+        <img :src="item.pictureUrl" alt="" />
         <div class="text">{{ item.title }}</div>
       </div>
     </template>
@@ -15,7 +15,7 @@ import { storeToRefs } from 'pinia'
 // 分类数据
 const homeStore = useCityStore()
 const { categories } = storeToRefs(homeStore)
-console.log(categories);
+console.log(categories)
 </script>
 
 <style lang="less" scoped>

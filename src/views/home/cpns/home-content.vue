@@ -3,7 +3,11 @@
     <h2 class="title">热门精选</h2>
     <div class="list">
       <template v-for="item in houseList" :key="item.data.id">
-        <house-item-v9  @click="itemClick(item.data)" v-if="item.discoveryContentType === 9" :itemData="item.data" />
+        <house-item-v9
+          @click="itemClick(item.data)"
+          v-if="item.discoveryContentType === 9"
+          :itemData="item.data"
+        />
         <house-item-v3 @click="itemClick(item.data)" v-else :itemData="item.data" />
       </template>
     </div>
@@ -22,7 +26,7 @@ const { houseList } = storeToRefs(homeSotre)
 
 const router = useRouter()
 const itemClick = ({ houseId }) => {
-  router.push('/detail/' +  houseId)
+  router.push('/detail/' + houseId)
 }
 </script>
 

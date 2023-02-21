@@ -1,39 +1,39 @@
-import axios from "axios";
+import axios from 'axios'
 
-import { BASE_URL, TIMEOUT } from "./config";
-import useMainStoe from "@/stores/modules/main";
+import { BASE_URL, TIMEOUT } from './config'
+import useMainStoe from '@/stores/modules/main'
 
-const mainStore = useMainStoe();
+const mainStore = useMainStoe()
 class Request {
   constructor(baseURL, timeout = 10000) {
     this.instance = axios.create({
       baseURL,
-      timeout,
-    });
+      timeout
+    })
 
     // 请求拦截
     this.instance.interceptors.request.use(
       (config) => {
-        mainStore.isLoading = true;
-        return config;
+        mainStore.isLoading = true
+        return config
       },
       (err) => {
-        mainStore.isLoading = false;
-        return err;
+        mainStore.isLoading = false
+        return err
       }
-    );
+    )
 
     // 响应拦截
     this.instance.interceptors.response.use(
       (res) => {
-        mainStore.isLoading = false;
-        return res;
+        mainStore.isLoading = false
+        return res
       },
       (err) => {
-        mainStore.isLoading = false;
-        return err;
+        mainStore.isLoading = false
+        return err
       }
-    );
+    )
   }
 
   request(config) {
@@ -41,21 +41,21 @@ class Request {
       this.instance
         .request(config)
         .then((res) => {
-          resolve(res.data);
+          resolve(res.data)
         })
         .catch((err) => {
-          reject(err);
-        });
-    });
+          reject(err)
+        })
+    })
   }
 
   get(config) {
-    return this.request({ ...config, method: "get" });
+    return this.request({ ...config, method: 'get' })
   }
 
   post(config) {
-    return this.request({ ...config, method: "post" });
+    return this.request({ ...config, method: 'post' })
   }
 }
 
-export default new Request(BASE_URL, TIMEOUT);
+export default new Request(BASE_URL, TIMEOUT)

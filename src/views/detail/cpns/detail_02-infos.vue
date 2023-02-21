@@ -3,7 +3,15 @@
     <div class="name">{{ topInfos?.houseName }}</div>
     <div class="tags">
       <template v-for="(item, index) in topInfos.houseTags" :key="index">
-        <span v-if="item.tagText" class="item" :style="{color: item?.tagText?.color, backgroundColor: item?.tagText?.background.color}">{{ item?.tagText?.text }}</span>
+        <span
+          v-if="item.tagText"
+          class="item"
+          :style="{
+            color: item?.tagText?.color,
+            backgroundColor: item?.tagText?.background.color
+          }"
+          >{{ item?.tagText?.text }}</span
+        >
       </template>
     </div>
     <div class="comment extra">

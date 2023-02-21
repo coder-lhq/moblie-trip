@@ -7,11 +7,11 @@
 </template>
 
 <script setup>
-import useMainStore from "@/stores/modules/main";
-const mainStore = useMainStore();
+import useMainStore from '@/stores/modules/main'
+const mainStore = useMainStore()
 const loadingClick = () => {
-  mainStore.isLoading = false;
-};
+  mainStore.isLoading = false
+}
 </script>
 <style lang="less" scoped>
 .loading {

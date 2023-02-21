@@ -38,7 +38,7 @@ const endDateStr = computed(() => formatMonthDay(endDate.value, 'MM.DD'))
   flex-direction: row;
   align-items: center;
   height: 45px;
-  line-height:45px;
+  line-height: 45px;
   padding: 0 10px;
   font-size: 14px;
   color: #999;
@@ -67,7 +67,7 @@ const endDateStr = computed(() => formatMonthDay(endDate.value, 'MM.DD'))
     }
 
     .end .date::after {
-      content: " ";
+      content: ' ';
       width: 0;
       height: 0;
       border: 4px solid #666;

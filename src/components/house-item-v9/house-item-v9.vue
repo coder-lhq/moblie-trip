@@ -2,18 +2,12 @@
   <div class="house-item">
     <div class="item-inner">
       <div class="cover">
-        <img :src="itemData.image.url" alt="">
+        <img :src="itemData.image.url" alt="" />
         <div class="info">
-          <div class="summary">{{ itemData.summaryText}}</div>
+          <div class="summary">{{ itemData.summaryText }}</div>
           <div class="name">{{ itemData.houseName }}</div>
           <div class="price">
-            <van-rate
-              :model-value="itemScore"
-              :size="12"
-              color="#fff"
-              readonly
-              allow-half
-            />
+            <van-rate :model-value="itemScore" :size="12" color="#fff" readonly allow-half />
             <div class="new">¥{{ itemData.finalPrice }}</div>
           </div>
         </div>
@@ -32,7 +26,6 @@ const props = defineProps({
 })
 
 const itemScore = computed(() => Number(props.itemData.commentScore))
-
 </script>
 
 <style lang="less" scoped>

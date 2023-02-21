@@ -6,7 +6,9 @@ const useDetailInfoData = defineStore('detail', {
   }),
   actions: {
     async fetchDetailData(id) {
-      const { data: { mainPart } } = await getDetailInfos(id)
+      const {
+        data: { mainPart }
+      } = await getDetailInfos(id)
       this.housePics = mainPart.topModule.housePicture.housePics
     }
   }

@@ -1,4 +1,4 @@
-import request from "../request";
+import request from '../request'
 
 export function getDetailInfos(houseId) {
   return request.get({

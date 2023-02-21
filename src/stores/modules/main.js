@@ -1,15 +1,15 @@
-import { defineStore } from "pinia";
+import { defineStore } from 'pinia'
 
-const startDate = new Date();
-const endDate = new Date();
-endDate.setDate(startDate.getDate() + 1);
+const startDate = new Date()
+const endDate = new Date()
+endDate.setDate(startDate.getDate() + 1)
 
-const useMainStoe = defineStore("main", {
+const useMainStoe = defineStore('main', {
   state: () => ({
     startDate,
     endDate,
-    isLoading: true,
-  }),
-});
+    isLoading: true
+  })
+})
 
-export default useMainStoe;
+export default useMainStoe

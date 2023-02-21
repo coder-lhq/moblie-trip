@@ -4,8 +4,8 @@
       <template v-for="(item, index) in tabbarData" :key="index">
         <van-tabbar-item :to="item.path">
           <template #icon>
-            <img v-if="currentIndex !== index" :src="getAssetURL(item.image)" alt="">
-            <img v-else :src="getAssetURL(item.imageActive)" alt="">
+            <img v-if="currentIndex !== index" :src="getAssetURL(item.image)" alt="" />
+            <img v-else :src="getAssetURL(item.imageActive)" alt="" />
           </template>
           <template #default>
             <span>{{ item.text }}</span>
@@ -17,7 +17,6 @@
 </template>
 
 <script setup>
-
 import { ref, watch } from 'vue'
 import tabbarData from '@/assets/data/tabbar'
 import { getAssetURL } from '@/utils/load_assets'
@@ -28,11 +27,10 @@ const route = useRoute()
 
 // 监听路由的变化
 watch(route, (newRoute) => {
-  const index = tabbarData.findIndex(item => item.path === newRoute.path)
-  if(index !== -1) return
+  const index = tabbarData.findIndex((item) => item.path === newRoute.path)
+  if (index !== -1) return
   currentIndex.value = index
 })
-
 </script>
 
 <style lang="less" scoped>

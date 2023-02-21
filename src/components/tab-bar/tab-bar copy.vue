@@ -1,13 +1,14 @@
 <template>
   <div class="tab-bar">
-    <div 
-        class="tab-bar-item"
-        :class="{active: currentIndex === index}"
-        v-for="(item, index) in tabbarData" :key="index"
-        @click="itemClick(index, item)"
-      >
-      <img v-if="currentIndex !== index" :src="getAssetURL(item.image)" alt="">
-      <img v-else :src="getAssetURL(item.imageActive)" alt="">
+    <div
+      class="tab-bar-item"
+      :class="{ active: currentIndex === index }"
+      v-for="(item, index) in tabbarData"
+      :key="index"
+      @click="itemClick(index, item)"
+    >
+      <img v-if="currentIndex !== index" :src="getAssetURL(item.image)" alt="" />
+      <img v-else :src="getAssetURL(item.imageActive)" alt="" />
       <span class="text">{{ item.text }}</span>
     </div>
   </div>
@@ -42,7 +43,7 @@ const itemClick = (index, item) => {
     justify-content: center;
     align-items: center;
     &.active {
-      color: var(--primary--color)
+      color: var(--primary--color);
     }
     img {
       width: 36px;

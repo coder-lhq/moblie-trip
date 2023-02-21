@@ -47,7 +47,6 @@ const { allCities } = storeToRefs(ctityStore)
 
 // 选中标签后的数据
 const currentGroup = computed(() => allCities.value[tabActive.value])
-
 </script>
 
 <style lang="less" scoped>
