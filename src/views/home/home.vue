@@ -14,7 +14,7 @@
 </template>
 
 <script setup>
-import { watch, ref, computed } from 'vue'
+import { watch, computed } from 'vue'
 import useHomeStore from '@/stores/modules/home'
 import useScroll from '@/hooks/useScroll'
 import HomeNavBar from './cpns/home-nav-bar.vue'

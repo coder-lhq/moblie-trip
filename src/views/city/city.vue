@@ -7,8 +7,7 @@
         placeholder="城市/区域/位置"
         shape="round"
         show-action
-        @cancel="cancelClick"
-      />
+        @cancel="cancelClick" />
 
       <!-- tab的切换 -->
       <van-tabs v-model:active="tabActive" color="#ff9854" line-height="2">

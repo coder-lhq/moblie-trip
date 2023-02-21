@@ -28,8 +28,7 @@
       color="#ff9854"
       :round="false"
       v-model:show="showCalendar"
-      @confirm="onConfirm"
-    />
+      @confirm="onConfirm" />
     <!-- 人数/选中价格 -->
     <div class="section statistics bottom-gray-line">
       <span>价格不限</span>
@@ -45,8 +44,7 @@
           :style="{
             color: item.tagText.color,
             background: item.tagText.background.color
-          }"
-        >
+          }">
           {{ item.tagText.text }}
         </div>
       </template>
@@ -59,7 +57,7 @@
 </template>
 
 <script setup>
-import { ref, defineProps, computed } from 'vue'
+import { ref, computed } from 'vue'
 import { useRouter } from 'vue-router'
 import useCityStore from '@/stores/modules/city'
 import useHomeStore from '@/stores/modules/home'

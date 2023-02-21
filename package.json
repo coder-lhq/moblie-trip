@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "lint": "eslint src/**/*.{js,jsx,vue,ts,tsx} --fix",
     "preview": "vite preview",
     "prettier": "prettier --write .",
     "prepare": "husky install"
@@ -20,13 +21,27 @@
     "vue-router": "^4.1.6"
   },
   "devDependencies": {
+    "@babel/eslint-parser": "^7.19.1",
+    "@commitlint/cli": "^17.4.4",
+    "@commitlint/config-conventional": "^17.4.4",
     "@vitejs/plugin-vue": "^4.0.0",
+    "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.34.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-vue": "^9.9.0",
+    "husky": "^8.0.0",
     "less": "^4.1.3",
     "prettier": "^2.8.4",
+    "prettier-eslint": "^15.0.1",
     "unplugin-vue-components": "^0.23.0",
     "vite": "^4.0.0",
-    "husky": "^8.0.0"
+    "vite-plugin-eslint": "^1.8.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }

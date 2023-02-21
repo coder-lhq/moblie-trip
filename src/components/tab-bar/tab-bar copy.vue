@@ -5,8 +5,7 @@
       :class="{ active: currentIndex === index }"
       v-for="(item, index) in tabbarData"
       :key="index"
-      @click="itemClick(index, item)"
-    >
+      @click="itemClick(index, item)">
       <img v-if="currentIndex !== index" :src="getAssetURL(item.image)" alt="" />
       <img v-else :src="getAssetURL(item.imageActive)" alt="" />
       <span class="text">{{ item.text }}</span>
