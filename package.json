@@ -8,6 +8,7 @@
     "lint": "eslint src/**/*.{js,jsx,vue,ts,tsx} --fix",
     "preview": "vite preview",
     "prettier": "prettier --write .",
+    "commit": "cz",
     "prepare": "husky install"
   },
   "dependencies": {
